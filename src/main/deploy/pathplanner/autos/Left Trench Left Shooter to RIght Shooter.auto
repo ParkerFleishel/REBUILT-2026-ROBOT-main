@@ -1,0 +1,118 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Left Trench Start"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Left Bump Return"
+          }
+        },
+        {
+          "type": "sequential",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "autointakefuelstop_trigger"
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 1.0
+                }
+              },
+              {
+                "type": "parallel",
+                "data": {
+                  "commands": [
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "armwiggle"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autoshoot"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autohopperstart"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autofeederstart"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Left to Right Shoot"
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 3.0
+                }
+              },
+              {
+                "type": "parallel",
+                "data": {
+                  "commands": [
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autoshootstop"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autohopperstop"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autofeederstop"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autointakefuelstop_trigger"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": "Parker Autos",
+  "choreoAuto": false
+}

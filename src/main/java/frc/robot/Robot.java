@@ -1,0 +1,135 @@
+// Copyright (c) FIRST and other WPILib contributors.
+// Open Source Software; you can modify and/or share it under the terms of
+// the WPILib BSD license file in the root directory of this project.
+
+package frc.robot;
+
+import com.pathplanner.lib.commands.FollowPathCommand;
+
+import com.ctre.phoenix6.HootAutoReplay;
+import com.ctre.phoenix6.SignalLogger;
+
+
+import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
+import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.networktables.GenericEntry;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+
+
+import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandScheduler;
+
+public class Robot extends TimedRobot {
+
+  
+    private Command m_autonomousCommand;
+
+    private final RobotContainer m_robotContainer;
+
+    /* log and replay timestamp and joystick data */
+    private final HootAutoReplay m_timeAndJoystickReplay = new HootAutoReplay()
+        .withTimestampReplay()
+        .withJoystickReplay();
+
+    public Robot() {
+        m_robotContainer = new RobotContainer();
+        FollowPathCommand.warmupCommand().schedule();
+       
+        
+    }
+
+
+
+    @Override
+    public void robotPeriodic() {
+        m_timeAndJoystickReplay.update();
+        m_robotContainer.periodic();
+        CommandScheduler.getInstance().run(); 
+
+/*if (kUseLimelight) {
+    var driveState = m_robotContainer.drivetrain.getState();
+    double headingDeg = */
+}       
+    //}
+
+    @Override
+    public void robotInit() {
+        // m_ShuffleboardTab = Shuffleboard.getTab("Driver and Operator");
+        // m_phase = m_ShuffleboardTab.add("phase", m_ShuffleboardTab).getEntry();
+        // m_time = m_ShuffleboardTab.add("match time", 0.0).getEntry();
+
+/*Due to the nature of how Java works, the first run of a path following 
+command could have a significantly higher delay compared with subsequent runs, 
+as all the classes involved will need to be loaded.
+
+To help alleviate this issue, you can run a warmup command in the background when code starts.
+
+This command will not control your robot, it will simply run through a 
+full path following command to warm up the library.
+
+ */
+        FollowPathCommand.warmupCommand().schedule();
+    }
+
+    @Override
+    public void disabledInit() {}
+
+    @Override
+    public void disabledPeriodic() {}
+
+    @Override
+    public void disabledExit() {}
+
+    @Override
+    public void autonomousInit() {
+       
+
+        m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+
+        if (m_autonomousCommand != null) {
+            CommandScheduler.getInstance().schedule(m_autonomousCommand);
+        }
+    }
+
+    @Override
+    public void autonomousPeriodic() {}
+
+    @Override
+    public void autonomousExit() {}
+
+    @Override
+    public void teleopInit() {
+      
+ 
+
+
+        if (m_autonomousCommand != null) {
+            CommandScheduler.getInstance().cancel(m_autonomousCommand);
+        }
+    }
+
+    @Override
+    public void teleopPeriodic() {}
+
+    @Override
+    public void teleopExit() {}
+
+    @Override
+    public void testInit() {
+        CommandScheduler.getInstance().cancelAll();
+    }
+
+    @Override
+    public void testPeriodic() {}
+
+    @Override
+    public void testExit() {}
+
+    @Override
+    public void simulationPeriodic() {}
+}

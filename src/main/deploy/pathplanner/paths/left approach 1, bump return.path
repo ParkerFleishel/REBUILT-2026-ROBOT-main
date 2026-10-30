@@ -1,0 +1,90 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 7.804871794871797,
+        "y": 4.674551282051282
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 7.689003558718861,
+        "y": 6.1814590747330955
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 2.5461091340450777,
+        "y": 5.482111506524318
+      },
+      "prevControl": {
+        "x": 3.3681115065243197,
+        "y": 5.483849530066613
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 0.36150234741783943,
+      "rotationDegrees": -14.953497860277118
+    },
+    {
+      "waypointRelativePos": 0.802816901408457,
+      "rotationDegrees": -16.136315699748074
+    }
+  ],
+  "constraintZones": [
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 0,
+      "maxWaypointRelativePos": 0.7716535433070917,
+      "constraints": {
+        "maxVelocity": 5.25,
+        "maxAcceleration": 10.0,
+        "maxAngularVelocity": 400.0,
+        "maxAngularAcceleration": 720.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    },
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 0.6974128233970754,
+      "maxWaypointRelativePos": 1.0,
+      "constraints": {
+        "maxVelocity": 4.0,
+        "maxAcceleration": 20.0,
+        "maxAngularVelocity": 100.0,
+        "maxAngularAcceleration": 100.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    }
+  ],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 1.0,
+    "maxAcceleration": 2.0,
+    "maxAngularVelocity": 400.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 3.0,
+    "rotation": -40.462227492093206
+  },
+  "reversed": false,
+  "folder": "left trench",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": -90.0
+  },
+  "useDefaultConstraints": true
+}

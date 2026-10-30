@@ -1,0 +1,211 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Left Trench Start"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Left Bump Return"
+          }
+        },
+        {
+          "type": "sequential",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "autointakefuelstop_trigger"
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 0.25
+                }
+              },
+              {
+                "type": "parallel",
+                "data": {
+                  "commands": [
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "armwiggle"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autoshoot"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autohopperstart"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autofeederstart"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 3.0
+                }
+              },
+              {
+                "type": "parallel",
+                "data": {
+                  "commands": [
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autoshootstop"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autohopperstop"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autofeederstop"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autointakefuelstop_trigger"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": []
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "New New Path"
+          }
+        },
+        {
+          "type": "sequential",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "autointakefuelstop_trigger"
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 0.25
+                }
+              },
+              {
+                "type": "parallel",
+                "data": {
+                  "commands": [
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autoshoot"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autofeederstart"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autohopperstart"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "armwiggle"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 3.0
+                }
+              },
+              {
+                "type": "parallel",
+                "data": {
+                  "commands": [
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autoshootstop"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autofeederstop"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autohopperstop"
+                      }
+                    },
+                    {
+                      "type": "named",
+                      "data": {
+                        "name": "autointakefuelstop_trigger"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": "Parker Autos",
+  "choreoAuto": false
+}

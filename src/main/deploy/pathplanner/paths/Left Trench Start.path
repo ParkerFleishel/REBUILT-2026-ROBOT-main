@@ -1,0 +1,107 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 4.3368009478672995,
+        "y": 7.366398104265403
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 7.764917061611376,
+        "y": 7.366398104265403
+      },
+      "isLocked": false,
+      "linkedName": "Left trench start"
+    },
+    {
+      "anchor": {
+        "x": 7.8,
+        "y": 4.7
+      },
+      "prevControl": {
+        "x": 7.872381516587678,
+        "y": 6.639822274881515
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Left approach"
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 0.1894736842105237,
+      "rotationDegrees": 0.0
+    },
+    {
+      "waypointRelativePos": 0.55,
+      "rotationDegrees": -75.0
+    },
+    {
+      "waypointRelativePos": 0.6820603907637708,
+      "rotationDegrees": -90.0
+    }
+  ],
+  "constraintZones": [
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 0,
+      "maxWaypointRelativePos": 0.55,
+      "constraints": {
+        "maxVelocity": 4.0,
+        "maxAcceleration": 7.0,
+        "maxAngularVelocity": 400.0,
+        "maxAngularAcceleration": 720.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    },
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 0.55,
+      "maxWaypointRelativePos": 1.0,
+      "constraints": {
+        "maxVelocity": 1.5,
+        "maxAcceleration": 5.0,
+        "maxAngularVelocity": 400.0,
+        "maxAngularAcceleration": 720.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    }
+  ],
+  "pointTowardsZones": [],
+  "eventMarkers": [
+    {
+      "name": "extendintakearm",
+      "waypointRelativePos": 0.09898762654668142,
+      "endWaypointRelativePos": null,
+      "command": null
+    },
+    {
+      "name": "autointakefuel",
+      "waypointRelativePos": 0.25,
+      "endWaypointRelativePos": null,
+      "command": null
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 1.0,
+    "maxAcceleration": 2.0,
+    "maxAngularVelocity": 400.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -90.0
+  },
+  "reversed": false,
+  "folder": "Parker Paths",
+  "idealStartingState": {
+    "velocity": 3.0,
+    "rotation": 0.0
+  },
+  "useDefaultConstraints": true
+}

@@ -1,0 +1,68 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 2.5,
+        "y": 5.5
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 2.463825757575758,
+        "y": 7.585126262626263
+      },
+      "isLocked": false,
+      "linkedName": "Left shoot"
+    },
+    {
+      "anchor": {
+        "x": 4.3368009478672995,
+        "y": 7.366398104265403
+      },
+      "prevControl": {
+        "x": 3.586123737373737,
+        "y": 7.378989898989898
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Left trench start"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 0.0,
+      "maxWaypointRelativePos": 1.0,
+      "constraints": {
+        "maxVelocity": 5.0,
+        "maxAcceleration": 7.0,
+        "maxAngularVelocity": 400.0,
+        "maxAngularAcceleration": 720.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    }
+  ],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 1.0,
+    "maxAcceleration": 2.0,
+    "maxAngularVelocity": 400.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 3.0,
+    "rotation": 0.0
+  },
+  "reversed": false,
+  "folder": "Parker Paths",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": -39.0
+  },
+  "useDefaultConstraints": true
+}

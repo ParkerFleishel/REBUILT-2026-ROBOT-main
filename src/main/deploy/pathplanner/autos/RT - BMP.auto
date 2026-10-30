@@ -1,0 +1,92 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "right approach 1"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.1
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Right Trench - Right Bump"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 2.0
+          }
+        },
+        {
+          "type": "sequential",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "autoshoot"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "autohopperstart"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "autofeederstart"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "armwiggle"
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 3.0
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "autofeederstop"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "autohopperstop"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "autoshootstop"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": "Works",
+  "choreoAuto": false
+}
